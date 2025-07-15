@@ -2,14 +2,21 @@ pipeline {
   agent any
 
   stages {
-    stage('Checkout') {
+    stage('serverip') {
       steps {
-        // the git step takes named parameters; branch name must be a string
-        git(
-          url:  'https://github.com/RakshithaUmesh1/Dummy2.git',
-          branch: 'main'
-        )
+            sh '''
+                hostname -i
+                echo "hostname is : $(hostname -i)"
+               '''
       }
     }
+    stage('uptime'){
+      steps{
+        sh '''
+             uptime
+             echo "uptime is : $(uptime)
+            '''
+        }
+      }
   }
 }
