@@ -14,7 +14,7 @@ pipeline {
       steps{
         sh '''
              uptime
-             echo "uptime is : $(uptime)
+             echo "uptime is : $(uptime)"
             '''
         }
       }
